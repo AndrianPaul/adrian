@@ -1,0 +1,56 @@
+public class Main {
+    public static void main(String[] args) {
+        Person person1 = new Person();
+        person1.displayPersonInfo();
+
+        Person person2 = new Person("Jeremy", 22);
+        person2.displayPersonInfo();
+
+        person1.setName("taki");
+        person1.setAge(22);
+        person1.displayPersonInfo();
+    }
+}
+
+class Person {
+    private String name;
+    private int age;
+
+    public Person() {
+        this.name = "adrian";
+        this.age = 22;
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name != null && !name.isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("Invalid name");
+        }
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age > 0) {
+            this.age = age;
+        } else {
+            System.out.println("Invalid age");
+        }
+    }
+
+    public void displayPersonInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
